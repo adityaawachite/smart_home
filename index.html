@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NestControl | Smart Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon"><i class="fa-solid fa-house-signal"></i></div>
+      <span class="brand-name">NestControl</span>
+      <button class="sidebar-close" id="sidebarClose"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav">
+      <a href="#dashboard" class="nav-item active"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+      <a href="#rooms" class="nav-item"><i class="fa-solid fa-door-open"></i><span>Rooms</span></a>
+      <a href="#devices" class="nav-item"><i class="fa-solid fa-lightbulb"></i><span>Devices</span></a>
+      <a href="#energy" class="nav-item"><i class="fa-solid fa-bolt"></i><span>Energy</span></a>
+      <a href="#environment" class="nav-item"><i class="fa-solid fa-temperature-half"></i><span>Environment</span></a>
+      <a href="#security" class="nav-item"><i class="fa-solid fa-shield-halved"></i><span>Security</span></a>
+      <a href="#automation" class="nav-item"><i class="fa-solid fa-gears"></i><span>Automations</span></a>
+      <a href="#history" class="nav-item"><i class="fa-solid fa-clock-rotate-left"></i><span>Activity</span></a>
+      <a href="#notifications" class="nav-item"><i class="fa-solid fa-bell"></i><span>Notifications</span><span class="nav-badge" id="navBadge">3</span></a>
+      <a href="#profile" class="nav-item"><i class="fa-solid fa-user"></i><span>Profile</span></a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#login" class="nav-item logout-link"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <div class="main-wrapper">
+    <header class="topbar">
+      <button class="hamburger" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-title" id="topbarTitle">Dashboard</div>
+      <div class="topbar-actions">
+        <div class="notif-wrapper">
+          <button class="icon-btn" id="notifBtn"><i class="fa-solid fa-bell"></i><span class="icon-dot" id="notifDot"></span></button>
+          <div class="notif-dropdown" id="notifDropdown">
+            <div class="notif-dropdown-header">Notifications</div>
+            <div class="notif-dropdown-body" id="notifDropdownBody"></div>
+            <a href="#notifications" class="notif-dropdown-footer">View all</a>
+          </div>
+        </div>
+        <a href="#profile" class="user-chip">
+          <div class="user-avatar">D</div><span class="user-name">Demo User</span>
+        </a>
+      </div>
+    </header>
+    <main class="content" id="app"></main>
+  </div>
+</div>
+<div class="toast-stack" id="toastStack"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
